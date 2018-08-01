@@ -27,4 +27,4 @@ dist/
 public/bundle.js
 
 # AWS credentials
-.aws.json
+aws-keys.json
