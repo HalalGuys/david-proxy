@@ -1,4 +1,5 @@
 const express = require('express');
+const proxy = require('http-proxy-middleware');
 const app = express();
 
 app.use((req, res, next) =>{
@@ -10,6 +11,12 @@ app.use((req, res, next) =>{
 
 app.use('/', express.static('public'));
 app.use('/listing/:listingId', express.static('public'));
+
+// Reviews
+app.use('/reviews/:id', proxy({target: 'http://ec2-18-216-90-61.us-east-2.compute.amazonaws.com:80/'}));
+
+// Details
+app.use('/api/details/:listingId', proxy({target: 'http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001/'}));
 
 const port = process.env.PORT || 3000;
 
