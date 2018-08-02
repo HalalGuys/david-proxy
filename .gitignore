@@ -28,3 +28,4 @@ public/bundle.js
 
 # AWS credentials
 aws-keys.json
+my-ec2-key-pair.pem
