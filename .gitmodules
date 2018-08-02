@@ -1,6 +1,0 @@
-[submodule "reviews"]
-	path = reviews
-	url = https://github.com/HalalGuys/reviews
-[submodule "listing-details"]
-	path = listing-details
-	url = https://github.com/HalalGuys/listing-details
