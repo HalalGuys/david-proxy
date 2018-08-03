@@ -16,7 +16,10 @@ app.use('/listing/:listingId', express.static('public'));
 app.use('/reviews/:id', proxy({target: 'http://ec2-18-216-90-61.us-east-2.compute.amazonaws.com:80/'}));
 
 // Details
-app.use('/api/details/:listingId', proxy({target: 'http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:3001/'}));
+app.use('/api/details/:listingId', proxy({target: 'http://ec2-54-200-238-109.us-west-2.compute.amazonaws.com:80/'}));
+
+// Book
+app.use('/api/listings/:listingId', proxy({target: 'http://ec2-13-59-22-40.us-east-2.compute.amazonaws.com:80/'}));
 
 const port = process.env.PORT || 3000;
 
